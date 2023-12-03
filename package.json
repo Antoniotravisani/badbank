@@ -4,7 +4,17 @@
   "description": "lowdb sample for 1.125",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "npm install",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "21.3.0",
+    "npm": "10.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antoniotravisani/badbank.git"
   },
   "author": "abel@mit.edu",
   "license": "MIT",
@@ -13,6 +23,7 @@
     "express": "^4.16.3",
     "firebase": "^10.7.0",
     "lowdb": "^1.0.0",
-    "mongodb": "^3.6.2"
+    "mongodb": "^4.0.0",
+    "mongoose": "^8.0.2"
   }
 }
