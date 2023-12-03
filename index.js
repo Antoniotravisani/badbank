@@ -11,7 +11,7 @@ app.use(express.static('public'));
 app.use(cors());
 
 // create user account
-app.get('http://64.23.140.41:3001/account/create/:name/:email/:password', function (req, res) {
+app.get('/account/create/:name/:email/:password', function (req, res) {
 
     // check if account exists
     dal.find(req.params.email).
@@ -36,7 +36,7 @@ app.get('http://64.23.140.41:3001/account/create/:name/:email/:password', functi
 
 
 // login user 
-app.get('http://64.23.140.41:3001/account/login/:email/:password', function (req, res) {
+app.get('/account/login/:email/:password', function (req, res) {
 
     dal.find(req.params.email).
         then((user) => {
@@ -58,7 +58,7 @@ app.get('http://64.23.140.41:3001/account/login/:email/:password', function (req
 });
 
 // find user account
-app.get('http://64.23.140.41:3001/account/find/:email', function (req, res) {
+app.get('/account/find/:email', function (req, res) {
 
     dal.find(req.params.email).
         then((user) => {
@@ -68,7 +68,7 @@ app.get('http://64.23.140.41:3001/account/find/:email', function (req, res) {
 });
 
 // find one user by email - alternative to find
-app.get('http://64.23.140.41:3001/account/findOne/:email', function (req, res) {
+app.get('/account/findOne/:email', function (req, res) {
 
     dal.findOne(req.params.email).
         then((user) => {
