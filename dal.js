@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017';
-//const uri = 'mongodb+srv://antoniotravisani16:Aa00151200@cluster1.ontlmng.mongodb.net/BBankdatabase?retryWrites=true&w=majority';
-const uri = 'mongodb+srv://antoniotravisani16:Aa00151200@ac-bzdp20r-shard-00-00.ontlmng.mongodb.net:27017,ac-bzdp20r-shard-00-01.ontlmng.mongodb.net:27017,ac-bzdp20r-shard-00-02.ontlmng.mongodb.net:27017/test?authSource=admin&replicaSet=atlas-ynky7b-shard-0&ssl=true';
+const uri = 'mongodb+srv://antoniotravisani16:Aa00151200@cluster1.ontlmng.mongodb.net/BBankdatabase?retryWrites=true&w=majority';
+//const uri = 'mongodb+srv://antoniotravisani16:Aa00151200@ac-bzdp20r-shard-00-00.ontlmng.mongodb.net:27017,ac-bzdp20r-shard-00-01.ontlmng.mongodb.net:27017,ac-bzdp20r-shard-00-02.ontlmng.mongodb.net:27017/test?authSource=admin&replicaSet=atlas-ynky7b-shard-0&ssl=true';
 
 let db = null;
 
