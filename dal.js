@@ -1,6 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017';
-const uri = 'mongodb+srv://antoniotravisani16:Aa00151200@cluster1.ontlmng.mongodb.net/?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://antoniotravisani16:Aa00151200@cluster1.ontlmng.mongodb.net/BBankdatabase?retryWrites=true&w=majority';
+
 let db = null;
 
 // Function to connect to MongoDB
