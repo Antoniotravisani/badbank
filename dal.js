@@ -2,7 +2,8 @@ const MongoClient = require('mongodb').MongoClient;
 //const url = 'mongodb://localhost:27017';
 //const uri = 'mongodb+srv://antoniotravisani16:Aa00151200@cluster1.ontlmng.mongodb.net/BBankdatabase?retryWrites=true&w=majority';
 //const uri = 'mongodb+srv://antoniotravisani16:Aa00151200@ac-bzdp20r-shard-00-00.ontlmng.mongodb.net:27017,ac-bzdp20r-shard-00-01.ontlmng.mongodb.net:27017,ac-bzdp20r-shard-00-02.ontlmng.mongodb.net:27017/test?authSource=admin&replicaSet=atlas-ynky7b-shard-0&ssl=true';
-const MONGODB_URL = require('./.env'); 
+const MONGODB_URL =  'mongodb+srv://antoniotravisani16:Aa00151200@cluster1.ontlmng.mongodb.net/BBankdatabase?retryWrites=true&w=majority';
+
 let db = null;
 
 // Function to connect to MongoDB
