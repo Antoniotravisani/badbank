@@ -8,6 +8,10 @@
     "build": "npm install",
     "start": "node index.js"
   },
+  "engines": {
+    "node": "21.3.0",
+    "npm": "10.2.4"
+  },
    "repository": {
     "type": "git",
     "url": "git+https://github.com/Antoniotravisani/badbank.git"
