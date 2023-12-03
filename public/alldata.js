@@ -4,7 +4,7 @@ function AllData(){
     React.useEffect(() => {
         
         // fetch all accounts from API
-        fetch('/badbank1-a1794b6d5c62.herokuapp.com/account/all')
+        fetch('/account/all')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
