@@ -1,11 +1,14 @@
-function Login(){
-  // ALTEREI AQUI PARA O USO DO CONTEXT [ANTES TINHA NO USER CONTEXT PROVIDER DADOS DIGITADOS]
-  //const user = React.useContext(UserContext);
- 
- 
+ //UserContext     = require('./usercontext.js');
 
+function Login(){
+ // const UserContext = React.useContext(UserContext);
   const [show, setShow]     = React.useState(true);
-  const [status, setStatus] = React.useState('');    
+  const [status, setStatus] = React.useState(''); 
+  //const [User, setUser] = React.useState(UserContext);
+  
+ //console.log(User);
+ //console.log(setUser);
+ 
 
   return (
     <Card
@@ -13,8 +16,8 @@ function Login(){
       header="Login"
       status={status}
       body={show ? 
-        <LoginForm setShow={setShow} setStatus={setStatus}/> :
-        <LoginMsg setShow={setShow} setStatus={setStatus}/>}
+        <LoginForm setShow={setShow} setStatus={setStatus} setUser={setUser}/> :
+        <LoginMsg setShow={setShow} setStatus={setStatus} setUser={setUser}/>}
     />
   ) 
 }
@@ -56,6 +59,9 @@ function LoginForm(props){
         console.log(firebaseUser);
         props.setStatus('');
         props.setShow(false);
+       // () => {props.setUser(firebaseUser)};
+        console.log(firebaseUser.email);
+        
         /*logout.style.display = 'inline';
         login.style.display  = 'none';
         signup.style.display = 'none'; */
@@ -106,40 +112,7 @@ function LoginForm(props){
   
   
 
-  /* signInWithPopup(auth, provider)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      console.log("You are logged in using the following email:" + userCredential.email)
-      })
-      .catch((error) => {
-        // Lidar com erros de autenticação, se houver
-        console.error('Erro de autenticação:', error);
-      });
   
-  };  */
-
-
- 
-
-  /*const promise = auth.signInWithPopup(provider);
-	promise.catch(e => console.log(e.message));
-
-
-    fetch(`/account/login/${email}/${password}`)
-    .then(response => response.text())
-    .then(text => {
-        try {
-            const data = JSON.parse(text);
-            props.setStatus('');
-            props.setShow(false);
-            console.log('JSON:', data);
-        } catch(err) {
-            props.setStatus(text)
-            console.log('err:', text);
-        }
-    });
-  }
-  */
 
   return (<>
 
@@ -159,7 +132,9 @@ function LoginForm(props){
 
     <button type="submit" className="btn btn-light" onClick={handle}>Login</button><br/><br/>
     
-    <button type="submit" className="btn btn-light" onClick={handlegoogle}>Login with Google</button>
+    <button type="submit" className="btn btn-light" onClick={handle}>Create Account [refazer code on click]</button>
    
   </>)
 }
+
+
