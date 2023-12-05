@@ -38,11 +38,11 @@ function WithdrawForm(props){
     .then(text => {
         try {
             const data = JSON.parse(text);
-            props.setStatus(JSON.stringify(data.balance.value));
+            props.setStatus(JSON.stringify(data.value));
             props.setShow(false);
             console.log('JSON:', data);
         } catch(err) {
-            props.setStatus('Deposit failed')
+            props.setStatus(' failed')
             console.log('err:', text);
         }
     });
