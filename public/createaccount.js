@@ -30,6 +30,23 @@ function CreateForm(props){
   const [balance, setBalance]   = React.useState(0);
 
   function handle(){
+    const firebaseConfig = {
+      apiKey: "AIzaSyA6b1Nccp8lxm2UwLclI2cX-xM3ZLdZzq8",
+      authDomain: "mit1-d71ae.firebaseapp.com",
+      projectId: "mit1-d71ae",
+      storageBucket: "mit1-d71ae.appspot.com",
+      messagingSenderId: "673400821121",
+      appId: "1:673400821121:web:47d8a2cc052567c193c480"
+  };
+  
+    // Check if Firebase is already initialized
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+    const auth  = firebase.auth();		
+		const promise = auth.createUserWithEmailAndPassword(email, password);
+		promise.catch(e => console.log(e.message));
+
     console.log(name,email,password,balance);
     const url = `/account/create/${name}/${email}/${password}`;
     (async () => {
@@ -50,7 +67,7 @@ function CreateForm(props){
       onChange={e => setName(e.currentTarget.value)} /><br/>
 
     Email address<br/>
-    <input type="input" 
+    <input type="email" 
       className="form-control" 
       placeholder="Enter email" 
       value={email} 
